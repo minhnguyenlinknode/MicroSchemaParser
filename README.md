@@ -11,6 +11,7 @@ It works like google testing tool https://search.google.com/structured-data/test
 HtmlDocument doc = CreateHtmlDocFromUrl("http://www.google.com/");
 
 var microSchemaParser = new MicroSchemaParser(doc);
+
 List<ISchema> allSupportedSchemas = microSchemaParser.Parse();
   
 
