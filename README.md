@@ -6,23 +6,36 @@ It works like google testing tool https://search.google.com/structured-data/test
 
 # Usage:
 
-//To parse all supported micro schema:
+// To parse all supported micro schema:
 
 HtmlDocument doc = CreateHtmlDocFromUrl("http://www.google.com/");
 
 var microSchemaParser = new MicroSchemaParser(doc);
 
-List<ISchema> allSupportedSchemas = microSchemaParser.Parse();
+List\<ISchema\> allSupportedSchemas = microSchemaParser.Parse();
   
 
-//To find specific micro schema:
+// To find specific micro schema:
 
-ItemListSchema itemListSchema = microSchemaParser.Find<ItemListSchema>();
+var itemListSchema = microSchemaParser.Find<ItemListSchema>();
   
-//To check schema is validated
+// To check schema is validated
 
 var validateResult = itemListSchema.Validate();
 
+# Extensions
+
+To support more schema:
+* Edit XML configuration at SchemaParser/SupportedSchemas/MicroSchema.xml to add more definition.
+* Add a new class to reflect that newly added schema as following, where XXX is the name of your new schema.
+  
+  public class XXXSchema : MicroSchema
+  {
+        public XXXSchema()
+            : base()
+        {
+        }
+  }
 
 # Author
  Minh Nguyen (c) 2018
