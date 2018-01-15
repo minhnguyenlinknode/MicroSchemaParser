@@ -16,9 +16,9 @@ List\<ISchema\> allSupportedSchemas = microSchemaParser.Parse();
   
   
 
-// To find specific micro schema:
+// To find a specific micro schema:
 
-var itemListSchema = microSchemaParser.Find<ItemListSchema>();
+var itemListSchema = microSchemaParser.Find\<ItemListSchema\>();
   
 
 // To check schema is validated
