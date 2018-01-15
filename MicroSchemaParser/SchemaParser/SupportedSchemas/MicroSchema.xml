@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ffMicroSchema>
+  <!-- Important note:
+     - Schema definition must follow specification at http://schema.org
+-->
+  <schema name="JobPosting">
+    <field name="title" isRequired="true" />
+    <field name="jobLocation" isRequired="true" />
+    <field name="datePosted" isRequired="true" dotNetType="System.DateTime" />
+    <field name="description" isRequired="true" />
+    <field name="hiringOrganization" isRequired="true" />
+
+    <field name="baseSalary" />
+    <field name="educationRequirements" />
+    <field name="employmentType" />
+    <field name="experienceRequirements" />
+    <field name="industry" />
+    <field name="jobBenefits" />
+    <field name="qualifications" />
+    <field name="responsibilities" />
+    <field name="skills" />
+    <field name="validThrough" />
+    <field name="workHours" />
+  </schema>
+
+  <schema name="ItemList">
+    <field name="numberOfItems" isRequired="true" />
+    <field name="itemListElement" isRequired="true" />
+  </schema>
+
+  <schema name="ListItem">
+    <field name="url" isRequired="true" />
+    <field name="position" />
+  </schema>
+
+  <schema name="Place">
+    <field name="address" isRequired="true" />
+  </schema>
+
+  <schema name="PostalAddress">
+    <field name="addressLocality" isRequired="true" />
+    <field name="addressRegion" isRequired="true" />
+    <field name="postalCode" />
+    <field name="streetAddress" />
+  </schema>
+</ffMicroSchema>
