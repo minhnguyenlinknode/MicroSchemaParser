@@ -41,7 +41,7 @@ namespace WebGrader.Builder.SchemaParser
         /// </summary>
         /// <typeparam name="T">Schema type to parse</typeparam>
         /// <returns>Returns the first micro schema type if found</returns>
-        public T Parse<T>() where T : ISchema
+        public T Find<T>() where T : ISchema
         {
             T result = default(T);
 

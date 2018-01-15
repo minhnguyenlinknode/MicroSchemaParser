@@ -37,7 +37,7 @@ namespace WebGrader.Builder.Test
             HtmlDocument doc = CreateHtmlDocFromFile("TestData/JobDetail.html");
 
             var microSchemaParser = new MicroSchemaParser(doc);
-            var schemaResult = microSchemaParser.Parse<JobPostingSchema>();
+            var schemaResult = microSchemaParser.Find<JobPostingSchema>();
 
             // Test result
             Assert.IsNotNull(schemaResult);
@@ -75,7 +75,7 @@ namespace WebGrader.Builder.Test
             HtmlDocument doc = CreateHtmlDocFromFile("TestData/Jobs.html");
 
             var microSchemaParser = new MicroSchemaParser(doc);
-            var schemaResult = microSchemaParser.Parse<ItemListSchema>();
+            var schemaResult = microSchemaParser.Find<ItemListSchema>();
 
             // Test result
             Assert.IsNotNull(schemaResult);
