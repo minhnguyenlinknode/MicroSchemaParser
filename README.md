@@ -2,7 +2,7 @@
 
 This is a basic .Net framework for parsing micro schema syntax (http://schema.org) 
 
-It works like google testing tool https://search.google.com/structured-data/testing-tool/u/0/ 
+It works like the way Google Structured Data Test Tool doing https://search.google.com/structured-data/testing-tool/u/0/ 
 
 # Usage:
 
