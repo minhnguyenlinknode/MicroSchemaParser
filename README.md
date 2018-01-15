@@ -33,8 +33,7 @@ To support more schema:
 * Edit XML configuration at SchemaParser/SupportedSchemas/MicroSchema.xml to add more definition.
 * Add a new class to reflect that newly added schema as following, where XXX is the name of your new schema.
   
-```c#
-  
+```c#  
   public class XXXSchema : MicroSchema  
   {    
         public XXXSchema()        
