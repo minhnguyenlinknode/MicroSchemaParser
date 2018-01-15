@@ -12,12 +12,14 @@ HtmlDocument doc = CreateHtmlDocFromUrl("http://www.google.com/");
 
 var microSchemaParser = new MicroSchemaParser(doc);
 List<ISchema> allSupportedSchemas = microSchemaParser.Parse();
+  
 
 //To find specific micro schema:
 
 ItemListSchema itemListSchema = microSchemaParser.Find<ItemListSchema>();
   
 //To check schema is validated
+
 var validateResult = itemListSchema.Validate();
 
 
