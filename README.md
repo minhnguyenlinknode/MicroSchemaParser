@@ -20,6 +20,11 @@ List<ISchema> allSupportedSchemas = microSchemaParser.Parse();
 
 var itemListSchema = microSchemaParser.Find<ItemListSchema>();
 
+// To get schema fields
+IField fields = itemListSchema.Fields;
+
+// Each field could be another schema
+List<ISchema> childSchemas = fields[0].SchemaItems;
 
 // To check schema is validated
 
@@ -29,15 +34,17 @@ var validateResult = itemListSchema.Validate();
 
 # Extensions
 
-To support more schema:
+To support more schemas for your need:
 * Edit XML configuration at SchemaParser/SupportedSchemas/MicroSchema.xml to add more definition.
+
+If you need your defined schema to be a strong-type class, do following:
 * Add a new class to reflect that newly added schema as following, where XXX is the name of your new schema.
   
 ```c#  
   public class XXXSchema : MicroSchema  
   {    
-        public XXXSchema()        
-            : base()
+        public XXXSchema(string name)        
+            : base(name)
         {
         }
   }
