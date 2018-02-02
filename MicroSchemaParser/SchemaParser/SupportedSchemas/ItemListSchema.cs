@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace WebGrader.Builder.SchemaParser
+namespace SchemaParser
 {
     /// <summary>
     /// ItemList schema http://schema.org/ItemList
     /// </summary>
     public class ItemListSchema : MicroSchema
     {
-        public ItemListSchema()
-            : base()
+        public ItemListSchema(string name)
+            : base(name)
         {
         }
 

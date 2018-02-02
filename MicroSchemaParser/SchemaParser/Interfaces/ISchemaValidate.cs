@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WebGrader.Builder.SchemaParser
+namespace SchemaParser
 {
     public interface ISchemaValidate
     {

@@ -1,9 +1,9 @@
 ﻿using HtmlAgilityPack;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SchemaParser;
 using System;
 using System.IO;
 using System.Linq;
-using WebGrader.Builder.SchemaParser;
 
 namespace WebGrader.Builder.Test
 {
@@ -58,9 +58,9 @@ namespace WebGrader.Builder.Test
 
             Assert.AreEqual(jobLocationField.GetFieldValue(), null);
             Assert.AreEqual(jobLocationField.SchemaItems.Count(), 1);
-            Assert.IsTrue(jobLocationField.SchemaItems[0] is PlaceSchema);
+            Assert.IsTrue(jobLocationField.SchemaItems[0].Name == "Place");
             Assert.AreEqual(jobLocationField.SchemaItems[0].Fields[0].GetFieldValue(), null);
-            Assert.IsTrue(jobLocationField.SchemaItems[0].Fields[0].SchemaItems[0] is PostalAddressSchema);
+            Assert.IsTrue(jobLocationField.SchemaItems[0].Fields[0].SchemaItems[0].Name == "PostalAddress");
             Assert.AreEqual(jobLocationField.SchemaItems[0].Fields[0].SchemaItems[0].Fields[0].GetFieldValue(), "Glasgow");
 
             // Test validation
@@ -100,6 +100,13 @@ namespace WebGrader.Builder.Test
             var schemas = microSchemaParser.Parse();
 
             Assert.IsTrue(schemas.Count() > 0);
+
+            Assert.AreEqual(schemas[0].Name, "Book");
+            Assert.AreEqual(schemas[0].Fields[0].FieldName, "isbn");
+            Assert.AreEqual(schemas[0].Fields[0].GetFieldValue(), "9780030426599");
+
+            Assert.IsTrue(schemas[1] is ItemListSchema);
+            Assert.AreEqual(schemas[1].Name, "ItemList");
         }
 
         [TestMethod]
@@ -110,7 +117,7 @@ namespace WebGrader.Builder.Test
             var microSchemaParser = new MicroSchemaParser(doc);
             var schemas = microSchemaParser.Parse();
 
-            Assert.AreEqual(schemas.Count(), 0);
+            Assert.IsNotNull(schemas);
         }
     }
 }

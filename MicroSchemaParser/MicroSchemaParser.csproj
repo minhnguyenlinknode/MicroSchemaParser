@@ -58,8 +58,6 @@
     <Compile Include="SchemaParser\SupportedSchemas\ItemListSchema.cs" />
     <Compile Include="SchemaParser\SupportedSchemas\JobPostingSchema.cs" />
     <Compile Include="SchemaParser\SupportedSchemas\ListItemSchema.cs" />
-    <Compile Include="SchemaParser\SupportedSchemas\PlaceSchema.cs" />
-    <Compile Include="SchemaParser\SupportedSchemas\PostalAddressSchema.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SchemaParser\SupportedSchemas\MicroSchema.xml" />

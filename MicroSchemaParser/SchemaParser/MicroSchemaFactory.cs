@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace WebGrader.Builder.SchemaParser
+namespace SchemaParser
 {
     public class MicroSchemaFactory
     {
@@ -12,19 +12,25 @@ namespace WebGrader.Builder.SchemaParser
         /// <returns>Micro schema object</returns>
         public static ISchema Create(string canonicalURL)
         {
+            ISchema result = null;
+
             var groups = Regex.Match(canonicalURL, @"(.*)schema.org/(.*)$").Groups;
             string schemaType = groups[2].Value;
 
             //Create instance from string
-            var typeName = $"WebGrader.Builder.SchemaParser.{schemaType}Schema";
+            var typeName = $"SchemaParser.{schemaType}Schema";
             Type supportSchemaType = Type.GetType(typeName);
 
             if (supportSchemaType == null)
             {
-                return null;
+                result = new MicroSchema(schemaType);
+            }
+            else
+            {
+                result = Activator.CreateInstance(supportSchemaType, schemaType) as ISchema;
             }
 
-            return Activator.CreateInstance(supportSchemaType) as ISchema;
+            return result;
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace WebGrader.Builder.SchemaParser
+namespace SchemaParser
 {
     public interface IField : ISchemaValidate
     {

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Reflection;
 using System.Xml.Linq;
 
-namespace WebGrader.Builder.SchemaParser
+namespace SchemaParser
 {
-    public abstract class MicroSchema : ISchema
+    public class MicroSchema : ISchema
     {
+        public string Name { get; set; }
         public List<IField> Fields { get; set; }
 
         public SchemaValidatedStatus Validate()
@@ -37,8 +38,9 @@ namespace WebGrader.Builder.SchemaParser
             return SchemaValidatedStatus.Success;
         }
 
-        public MicroSchema()
+        public MicroSchema(string name)
         {
+            Name = name;
             Fields = CreateFields();
         }
 
@@ -48,7 +50,7 @@ namespace WebGrader.Builder.SchemaParser
 
             var microSchemaXmlDoc = LoadMicroSchemaXml();
 
-            var schemaName = this.GetType().Name.Replace("Schema", "");
+            var schemaName = this.Name; // this.GetType().Name.Replace("Schema", "");
             var schemaElement = microSchemaXmlDoc.Root.Elements()
                                                  .FirstOrDefault(n => GetAttributeValue(n, "name") == schemaName);
 

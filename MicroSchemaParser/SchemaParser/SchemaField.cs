@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace WebGrader.Builder.SchemaParser
+namespace SchemaParser
 {
     public class SchemaField<T> : IField
     {

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace WebGrader.Builder.SchemaParser
+namespace SchemaParser
 {
     public interface ISchema : ISchemaValidate
     {
+        string Name { get; set; }
         List<IField> Fields { get; set; }
     }
 }

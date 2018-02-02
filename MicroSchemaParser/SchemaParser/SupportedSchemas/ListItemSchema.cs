@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Linq;
 
-namespace WebGrader.Builder.SchemaParser
+namespace SchemaParser
 {
     public class ListItemSchema : MicroSchema, ILinkableSchema
     {
         /// <summary>
         /// ListItem schema http://schema.org/ListItem
         /// </summary>
-        public ListItemSchema()
-            : base()
+        public ListItemSchema(string name)
+            : base(name)
         {
         }
 

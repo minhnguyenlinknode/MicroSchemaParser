@@ -43,4 +43,8 @@
     <field name="postalCode" />
     <field name="streetAddress" />
   </schema>
+
+  <schema name="Book">
+    <field name="isbn" isRequired="true" />
+  </schema>
 </ffMicroSchema>
