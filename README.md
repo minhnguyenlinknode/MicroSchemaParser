@@ -30,11 +30,12 @@ object fieldValue = fields[0].GetFieldValue();
 // Each field could be another schema
 List<ISchema> childSchemas = fields[0].SchemaItems;
 
-// To check schema is validated
 
+// To check schema is validated
 var validateResult = itemListSchema.Validate();
 
 ```
+See unit test for more details: https://github.com/minhnguyenlinknode/MicroSchemaParser/blob/master/MicroSchemaParser.Tests/UnitTest1.cs 
 
 # Extensions
 
