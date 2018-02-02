@@ -23,6 +23,10 @@ var itemListSchema = microSchemaParser.Find<ItemListSchema>();
 // To get schema fields
 IField fields = itemListSchema.Fields;
 
+// To get schema field name or value
+string fieldName = fields[0].FieldName;
+object fieldValue = fields[0].GetFieldValue();
+
 // Each field could be another schema
 List<ISchema> childSchemas = fields[0].SchemaItems;
 
