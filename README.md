@@ -1,6 +1,6 @@
 # MicroSchema Parser .NET library
 
-This is a basic .Net framework for parsing micro schema syntax (http://schema.org) 
+This is a basic .Net framework based on HtmlAgilityPack library for parsing micro schema syntax (http://schema.org) 
 
 It works like the way Google Structured Data Test Tool doing https://search.google.com/structured-data/testing-tool/u/0/ 
 
