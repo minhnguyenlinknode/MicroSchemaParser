@@ -1,4 +1,4 @@
-# MicroSchema Parser .NET library
+# Schema Parser .NET library
 
 This is a basic .Net framework based on HtmlAgilityPack library for parsing micro schema syntax (http://schema.org) 
 
