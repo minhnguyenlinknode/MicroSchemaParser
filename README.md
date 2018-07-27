@@ -57,5 +57,5 @@ If you need your defined schema to be a strong-type class, do following:
 ```
 
 # Author
- Minh Nguyen (c) 2018
+ Minh Nguyen (c) 2017
  
